@@ -54,4 +54,9 @@ task checkstyleMain (type: Checkstyle, overwrite: true) {
 
 pmd {
 	pmdTest.enabled = false
+	ignoreFailures = true
+}
+
+de.aaschmid.cpd {
+	ignoreFailures = true
 }
