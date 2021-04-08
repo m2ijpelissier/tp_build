@@ -57,6 +57,6 @@ pmd {
 	ignoreFailures = true
 }
 
-de.aaschmid.cpd {
+cpdCheck {
 	ignoreFailures = true
 }
