@@ -11,6 +11,9 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id "com.github.spotbugs" version "4.7.0"
+    id 'checkstyle'
+    id 'pmd'
+    id 'de.aaschmid.cpd' version '3.2'
 }
 
 repositories {
@@ -32,4 +35,23 @@ dependencies {
 spotbugs {
 	ignoreFailures = true
 	spotbugsTest.enabled = false
+}
+
+checkstyle {
+	toolVersion = '8.41.1'
+	checkstyleTest.enabled = false
+}
+
+task checkstyleMain (type: Checkstyle, overwrite: true) {
+	configFile = file("${project.rootDir}/config/checkstyle/google_checks.xml")
+	ignoreFailures = true
+	showViolations = true
+	source fileTree('src/main/java')
+	include '**/*.java'
+	exclude '**/gen/**'
+	classpath = fileTree("${rootProject.rootDir}/config/checkstyle/google_checks.xml")
+}
+
+pmd {
+	pmdTest.enabled = false
 }
