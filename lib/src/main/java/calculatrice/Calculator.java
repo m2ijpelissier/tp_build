@@ -16,5 +16,4 @@ public class Calculator {
 	public boolean isEven(int a) {
 		return ((a%2 == 0)? true:false);
 	}
-	public
 }
