@@ -35,7 +35,7 @@ public class CalculatorTest {
 	@Test
 	public void testOdd() {
 		Calculator classaTester = new Calculator();
-		assertTrue(classaTester.isEven(5));
-		assertFalse(classaTester.isEven(6));
+		assertFalse(classaTester.isEven(5));
+		assertTrue(classaTester.isEven(6));
 	}
 }
