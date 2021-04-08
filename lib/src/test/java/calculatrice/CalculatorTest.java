@@ -31,4 +31,11 @@ public class CalculatorTest {
 		assertTrue(classaTester.isEven(4));
 		assertFalse(classaTester.isEven(5));
 	}
+	
+	@Test
+	public void testOdd() {
+		Calculator classaTester = new Calculator();
+		assertTrue(classaTester.isEven(5));
+		assertFalse(classaTester.isEven(6));
+	}
 }
